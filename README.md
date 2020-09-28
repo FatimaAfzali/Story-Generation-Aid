@@ -1,1 +1,5 @@
-# Story-Generation-Aid
+I created this program in Fall semester 2018 as part of FIU's SparkDev (https://upe.cs.fiu.edu/sparkdev/) program, as part of the Advanced AI team's story generation project. `Generator.ipynb` is to be opened in a Jupyter notebook using  Python 2 kernel. 
+
+The code generates entities with semantic information: objects, locations, and characters, formed into a network through which one can generate plot outlines. The main technology used is word2vec (https://en.wikipedia.org/wiki/Word2vec), which embeds words as high-dimensional vectors; we use a pretrained model, `bow2.words`, omitted from the repository due to its size. 
+
+The `Embedding` class provides tools for working with word embeddings, including methods for filtering by norm/dot product and performing algebraic operations such as PCA. The `Grammar` class allows us to randomly generate coherent sentence structures and fill them with semantically related words, and uses a custom context-free grammar (see the variables `char_productions` and `char_terminals`). The `Wrapper` class is the prototypical entity, and comes with three subclasses: `Character`, `Location`, and `Object`. 
